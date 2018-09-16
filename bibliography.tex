@@ -1,0 +1,43 @@
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\IfFileExists{parskip.sty}{%
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+ % keep the stuff above to keep Mendeley's formatting from Word
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% This performs what we want
+% bibliography with no number, and showing in the top of the pages
+
+\setcounter{chapter}{-1}
+\chapter{BIBLIOGRAPHY}
+\renewcommand{\thechapter}{A}
+
+
+If you decide to use this way to include bibliography you should export your bibliography as a .tex file and paste that into here.
+
+I do not fully recomend that. I would use a .bib and change the setup on main.tex

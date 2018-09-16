@@ -1,0 +1,121 @@
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\filcenter}
+  {\MakeUppercase{\chaptertitlename}\ \thechapter}{2pt}
+  {\normalfont\bfseries}
+
+% This will remove the added spacing 
+\titlespacing*{\chapter}{0pt}{-50pt}{20pt}
+
+
+
+\titleformat{\section}
+  {\normalfont\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\bfseries}{\thesubsection}{1em}{}
+
+\chapter{RESULTS}
+
+This is non-centered text that will distract you from the important stuff. We can argue a lot about many things. Some Kant? Sure, here you go:
+
+\kant[1-2]
+
+\section{The whole mantra}
+
+\begin{center}
+If you're happy and you know it, clap your hands (clap clap)\\
+If you're happy and you know it, clap your hands (clap clap)\\
+If you're happy and you know it, then your face will surely show it\\
+If you're happy and you know it, clap your hands. (clap clap)\\
+
+If you're happy and you know it, stomp your feet (stomp stomp)\\
+If you're happy and you know it, stomp your feet (stomp stomp)\\
+If you're happy and you know it, then your face will surely show it\\
+If you're happy and you know it, stomp your feet. (stomp stomp)\\
+
+If you're happy and you know it, shout "Hurray!" (hoo-ray!)\\
+If you're happy and you know it, shout "Hurray!" (hoo-ray!)\\
+If you're happy and you know it, then your face will surely show it\\
+If you're happy and you know it, shout "Hurray!" (hoo-ray!)\\
+
+If you're happy and you know it, do all three (clap-clap, stomp-stomp, hoo-ray!)\\
+If you're happy and you know it, do all three (clap-clap, stomp-stomp, hoo-ray!)\\
+If you're happy and you know it, then your face will surely show it\\
+If you're happy and you know it, do all three. (clap-clap, stomp-stomp, hoo-ray!)\\
+    
+
+\end{center}
+
+
+\section{Tables can go in results}
+
+Tables can also go in results (see below).
+
+\begin{longtable}[]{@{}cccc@{}}
+\caption{Anova Table of something. Since you're here, give a try to glm!}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.20\columnwidth}\centering
+term\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
+statistic\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering
+df\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+p.value\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.20\columnwidth}\centering
+term\strut
+\end{minipage} & \begin{minipage}[b]{0.15\columnwidth}\centering
+statistic\strut
+\end{minipage} & \begin{minipage}[b]{0.06\columnwidth}\centering
+df\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+p.value\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.20\columnwidth}\centering
+Main effect 1\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+36.341\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+$<$0.001\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.20\columnwidth}\centering
+Main effect 2\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+0.252\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+1\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+0.615\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.20\columnwidth}\centering
+Interaction\strut
+\end{minipage} & \begin{minipage}[t]{0.15\columnwidth}\centering
+1.211\strut
+\end{minipage} & \begin{minipage}[t]{0.06\columnwidth}\centering
+4\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+0.876\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+
+You want figures? See below a nice pet.
+
+\begin{figure}
+
+\includegraphics[width=\textwidth]{tiger_smile}
+\centering
+% This makes "Figure 1" being bold
+\captionsetup{labelfont=bf}
+% This makes it no indented (you likely want this) 
+\captionsetup{format=plain}
+    \caption[This caption shows in list of figures]{WHATEVER ELSE YOU WANT HERE.}
+\end{figure}

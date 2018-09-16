@@ -1,0 +1,131 @@
+%%%% PUT HERE ALL THE SETUP REQUIREMENTS %%%%%%%%
+
+% kate: encoding iso-8859-1
+% changed to utf8 by Karol Kozioł
+\RequirePackage{fix-cm} % Improves appearance of some cm-super fonts
+\RequirePackage[l2tabu, orthodox]{nag}    % warns about some obsolete latex constructs
+\documentclass[
+   fontsize=12pt,       % font size 12pt
+   left=1.5in,
+   right=2in,
+   top=1in,
+   bottom=1in,
+ %  a4paper,            % layout for DIN A4
+   twoside=false,       % layout for one sided printing
+   headinclude,         % include head in layout computation
+   headsepline,         % horizontal line below head
+   BCOR=12mm,            % correction for fixation
+   DIV=16,               % DIV-value for creating the print space
+   parskip=half,         % spacing between paragraphs
+   open=any,             % chapters may start on even and odd pages
+   bibliography=totoc,  % put bibliography into table of contents
+   numbers=noenddot,    % chapter numbers without full stop
+%   tablecaptionabove,   % use table headings with correct spacing
+%  fleqn                % float equations to left margin
+]{scrbook}%[2007/12/24]  % scrbook-Version min. v2.98 from 2007/12/24
+
+\usepackage{setspace} % For doublespacing
+\usepackage[intlimits]{amsmath}  % place the subscripts and superscripts in the right position
+\usepackage{textcomp} % other math symbols like (R) for registered
+\usepackage{natbib}              % bibliography package
+\usepackage{scrpage2}            % head and foot layout
+\usepackage{units}               % package for setting units in a typographically correct way (e.g. \unit[3]{cm})
+\usepackage{booktabs}            % package provides additional commands to enhance the quality of tables
+\usepackage{datetime}            % provides \pdfdate command
+\bibliographystyle{natdin}       % use a DIN style for the bibliography
+\pagestyle{scrheadings}          % enable scrheadings layout for head and foot
+% Table of contents package
+\usepackage{tocloft}
+
+\ifx\pdfoutput\undefined
+ % non pdflatex settings (normal latex compiler assumed)
+ \usepackage[dvips]{graphicx}
+\else
+ % different settings for the pdflatex compiler
+ \usepackage[pdftex]{graphicx}
+ \usepackage{epstopdf}           % enables automatic conversion from .eps to .pdf graphic files; run MikTeX as "latex --enable-write18"
+ \usepackage[pdftex,plainpages=false]{hyperref}
+ \pdfcompresslevel=9
+ \pdfinfo{
+    /CreationDate (D:20050518110000) % date format is year(4) month(2) day(2) hour(2) minute(2) second(2)
+    /ModDate      (D:\pdfdate)
+ }
+ \hypersetup{
+    pdftitle    = {thesis title},
+    pdfsubject  = {thesis subject},
+    pdfauthor   = {your name},
+    pdfkeywords = {},
+    colorlinks  = {true},
+    linkcolor   = {black},
+    citecolor   = {black},
+    urlcolor    = {black}
+ }
+% ifelse end 
+\fi
+
+
+% We want this to build nice tables from R using pandoc
+\usepackage{longtable,booktabs}
+\usepackage{titling}
+
+%% We use this so that counters don't get set to 0 in each section
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+% Use this package to manage captions
+\usepackage{caption} 
+
+% use this to have arrows in text
+\usepackage{textcomp}
+
+\renewcommand{\bibname}{BIBLIOGRAPHY}
+
+% Change the table of contents titles
+% Also Center
+\renewcommand{\contentsname}{\hspace*{\fill}\bfseries\large CONTENTS \hspace*{\fill}}   
+\renewcommand{\listfigurename}{\hspace*{\fill}\normalfont\bfseries\large LIST OF FIGURES \hspace*{\fill}}   
+\renewcommand{\listtablename}{\hspace*{\fill}\normalfont\bfseries\large LIST OF TABLES \hspace*{\fill}}     
+
+
+% adds dot after chapter title in ToC and lof
+\renewcommand\cftchapaftersnum{.}
+\renewcommand{\cftfigaftersnum}{.}
+% adds leader dots from chapter titles to page numbers
+\renewcommand\cftchapdotsep{\cftdotsep}
+
+% spacing of sections
+% It should be double for changes and single for same level
+% Before space
+\renewcommand\cftbeforechapskip{2pt}
+\renewcommand\cftbeforesecskip{2pt}
+\renewcommand\cftbeforesubsecskip{2pt}
+
+% after space
+\renewcommand\cftchapafterpnum{\vskip 4pt}
+\renewcommand\cftsecafterpnum{\vskip 1pt}
+\renewcommand\cftsubsecafterpnum{\vskip 1pt}
+
+% Adjust sectional unit title fonts in ToC
+\renewcommand{\cfttoctitlefont}{\normalsize\normalfont\bfseries}
+\renewcommand{\cftchapfont}{\normalfont\bfseries}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+
+% Add "page" at the beginning of document
+\AtBeginDocument{%
+  \addtocontents{toc}{~\hfill\bfseries Page\par}
+}
+
+
+
+% For filler text
+\usepackage{lipsum,kantlipsum}
+
+
+\usepackage{float}
+
+% You want this to get the title to be the same as the content
+\usepackage{titlesec}
+

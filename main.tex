@@ -1,0 +1,92 @@
+%%% ALWAYS COMPILE FROM main.tex %%%%%
+
+
+\include{setup}
+
+\makeindex
+
+% Remove running head
+\pagestyle{plain}
+
+% Begin document
+\begin{document}
+
+%%% ------------- MANUALLY FIXED SPACES -----------%%%%%%  
+% Treat as separate so that double spacing does not affect %
+% Cover page
+\include{cover_page}
+\maketitle
+
+
+% Begin preamble with requirements before content
+\frontmatter
+% Signature page
+\include{signatures}
+%%% ------------- MANUALLY FIXED SPACES -----------%%%%%%
+
+% Begin double spacing
+\doublespacing
+
+% include acknowledgements
+\include{acknowledgements}
+% include abstract
+\include{00-abstract}
+
+% Single space the table of contents
+
+\begin{singlespace}
+\begin{flushleft}
+
+\setlength{\cftbeforetoctitleskip}{-3em}
+\tableofcontents
+
+
+
+% Add lof to toc
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+
+\addtocontents{toc}{CHAPTER \par}
+
+% List of tables (I don't have any)
+%\listoftables
+% List of figures
+\newpage
+
+% Fix vertical space
+\setlength{\cftbeforeloftitleskip}{-3em}
+% Fix figure numbering space
+\cftsetindents{figure}{0em}{1.5 em}
+\listoffigures
+\end{flushleft}
+\end{singlespace}
+
+% Add "Table" and "Page" to list of tables and list of figures
+\addtocontents{lot}{\textbf{Table}~\hfill\textbf{Page} \par}
+\addtocontents{lof}{\textbf{Figure}~\hfill\textbf{Page} \par}
+
+
+
+
+% Begin thesis chapters
+\mainmatter
+
+% Include chapters
+\include{01-Introduction}                              
+\include{02-Methods}
+\include{03-Results}
+\include{04-Discussion}
+
+% If you have a tables.tex table appendix
+% \include{tables}
+
+
+\appendix
+
+% If using main.bib as citations
+%\nocite{*}             % use all bibliography entries
+%\bibliography{main}   % read file main.bib (bibliography entries)
+
+% if using copy and paste citations from elsewhere
+\include{bibliography}
+
+\end{document}
