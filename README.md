@@ -6,7 +6,7 @@ The idea is to provide something that resembles the guidelines from UMass Amhers
 
 There's a compiled online version in Overleaf which you can visit at https://v2.overleaf.com/read/tzkbdshmmwqk.
 
-The real thesis will be available soon at https://scholarworks.umass.edu/masters_theses_2/ (I will update the link by then).
+The real thesis is available here https://scholarworks.umass.edu/masters_theses_2/701/
 
 ## Improvement
 
